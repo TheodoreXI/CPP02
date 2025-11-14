@@ -38,23 +38,23 @@ Fixed::~Fixed()
 Fixed::Fixed(const int p)
 {
 	std::cout << "Int constructor called\n";
-	fixed_value = p * pow(2, fract);
+	fixed_value = p << fract;
 }
 
 Fixed::Fixed(const float p)
 {
 	std::cout << "Float constructor called\n";
-	fixed_value = p * pow(2, fract);
+	fixed_value = p * (1 << fract);
 }
 
 float	Fixed::toFloat(void) const
 {
-	return (fixed_value / pow(2, fract));
+	return ((float)fixed_value / (1 << fract));
 }
 
 int	Fixed::toInt(void) const
 {
-	return (fixed_value / pow(2, fract));
+	return (fixed_value / (1 << fract));
 }
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj)
