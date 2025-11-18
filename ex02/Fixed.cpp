@@ -44,7 +44,7 @@ Fixed::Fixed(const int p)
 Fixed::Fixed(const float p)
 {
 	std::cout << "Float constructor called\n";
-	fixed_value = p * (1 << fract);
+	fixed_value = roundf(p * (1 << fract));
 }
 
 float	Fixed::toFloat(void) const
@@ -59,19 +59,18 @@ int	Fixed::toInt(void) const
 
 std::ostream	&operator<<(std::ostream &os, const Fixed &obj)
 {
-	
-	os << "raw value " << obj.getRawBits() << "\n" << obj.toFloat();
+	os << obj.toFloat();
 	return (os);
 }
 
 Fixed	Fixed::operator+(const Fixed &obj)
 {
-	return (Fixed(this->fixed_value+obj.fixed_value));
+	return (Fixed(this->toFloat()+obj.toFloat()));
 }
 
 Fixed	Fixed::operator-(const Fixed &obj)
 {
-	return (Fixed(this->fixed_value-obj.fixed_value));
+	return (Fixed(this->toFloat()-obj.toFloat()));
 }
 
 Fixed	Fixed::operator*(const Fixed &obj)
@@ -82,7 +81,7 @@ Fixed	Fixed::operator*(const Fixed &obj)
 
 Fixed	Fixed::operator/(const Fixed &obj)
 {
-	return (Fixed(this->fixed_value/obj.fixed_value));
+	return (Fixed(this->toFloat()/obj.toFloat()));
 }
 
 Fixed	Fixed::operator++(int a)

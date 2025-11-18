@@ -44,7 +44,7 @@ Fixed::Fixed(const int p)
 Fixed::Fixed(const float p)
 {
 	std::cout << "Float constructor called\n";
-	fixed_value = p * (1 << fract);
+	fixed_value = roundf(p * (1 << fract));
 }
 
 float	Fixed::toFloat(void) const
