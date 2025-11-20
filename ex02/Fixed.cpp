@@ -84,7 +84,7 @@ Fixed	Fixed::operator/(const Fixed &obj)
 	return (Fixed(this->toFloat()/obj.toFloat()));
 }
 
-Fixed	Fixed::operator++(int a)
+Fixed	Fixed::operator++(int)
 {
 	Fixed cpy;
 	cpy = *this;
@@ -92,7 +92,7 @@ Fixed	Fixed::operator++(int a)
 	return (cpy);
 }
 
-Fixed	Fixed::operator--(int a)
+Fixed	Fixed::operator--(int)
 {
 	Fixed cpy;
 	cpy = *this;
