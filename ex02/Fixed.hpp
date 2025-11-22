@@ -17,8 +17,8 @@ class Fixed
 		Fixed	operator-(const Fixed &obj);
 		Fixed	operator*(const Fixed &obj);
 		Fixed	operator/(const Fixed &obj);
-		Fixed	operator++(int a);
-		Fixed	operator--(int a);
+		Fixed	operator++(int);
+		Fixed	operator--(int);
 		Fixed	&operator++(void);
 		Fixed	&operator--(void);
 		bool	operator<(const Fixed &obj);
