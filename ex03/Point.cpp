@@ -21,6 +21,7 @@ Point::Point(const Point &obj)
 Point &Point::operator=(const Point &obj)
 {
 	// std::cout << "Copy assignement operator called.\n";
+	obj.getfixedx();
 	return (*this);
 }
 

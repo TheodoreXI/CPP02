@@ -11,5 +11,4 @@ int main()
 		std::cout << "true\n";
 	else
 		std::cout << "false\n";
-	std::cout << bsp(a,b,c,p) << "\n";
 }
